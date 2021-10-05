@@ -59,27 +59,33 @@
     <div class="row">
         <div class="col">
             <h1 id="content">Overview</h1>
-            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ornare ultrices risus et commodo. Curabitur consequat, urna in accumsan semper, elit lacus vulputate nulla, vitae suscipit orci sapien vitae nisi. Praesent mollis velit vitae diam laoreet molestie. Maecenas varius ligula sit amet congue accumsan. In efficitur metus erat, interdum vehicula sem tristique non. Pellentesque eleifend malesuada maximus. Suspendisse eu quam augue. Mauris in mauris dui. Praesent dignissim pharetra est. Donec fringilla ante nec convallis mollis. Donec feugiat elementum pharetra. Sed non faucibus purus. Integer pellentesque neque eget ligula efficitur, tempor aliquam lectus dignissim.
-
-                Cras eros enim, scelerisque sed dolor vitae, viverra consequat ipsum. Pellentesque diam felis, commodo eget lacus ut, imperdiet blandit ligula. Phasellus libero eros, bibendum sit amet cursus at, placerat sed risus. Donec sollicitudin ut quam ut luctus. Sed fermentum arcu vitae leo aliquet congue. Aenean ac est at tortor semper dictum. Proin aliquam arcu non mauris accumsan, vel porta lorem pharetra. Aenean in nunc eget est laoreet egestas. Curabitur dignissim vestibulum venenatis. Ut non feugiat nisi. In quis turpis aliquet, accumsan dolor sit amet, finibus tellus. Aliquam aliquet semper nibh eu accumsan.</p>
+            <p class="lead">Docker is a set of platform as a service products that use OS-level virtualization to deliver software in packages called containers. Containers are isolated from one another and bundle their own software, libraries and configuration files; they can communicate with each other through well-defined channels.</p>
             
         </div>
     </div>
     <div class="row">
         <div class="col">
             <h1 id="installation">Installation</h1>
-            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ornare ultrices risus et commodo. Curabitur consequat, urna in accumsan semper, elit lacus vulputate nulla, vitae suscipit orci sapien vitae nisi. Praesent mollis velit vitae diam laoreet molestie. Maecenas varius ligula sit amet congue accumsan. In efficitur metus erat, interdum vehicula sem tristique non. Pellentesque eleifend malesuada maximus. Suspendisse eu quam augue. Mauris in mauris dui. Praesent dignissim pharetra est. Donec fringilla ante nec convallis mollis. Donec feugiat elementum pharetra. Sed non faucibus purus. Integer pellentesque neque eget ligula efficitur, tempor aliquam lectus dignissim.
-
-                Cras eros enim, scelerisque sed dolor vitae, viverra consequat ipsum. Pellentesque diam felis, commodo eget lacus ut, imperdiet blandit ligula. Phasellus libero eros, bibendum sit amet cursus at, placerat sed risus. Donec sollicitudin ut quam ut luctus. Sed fermentum arcu vitae leo aliquet congue. Aenean ac est at tortor semper dictum. Proin aliquam arcu non mauris accumsan, vel porta lorem pharetra. Aenean in nunc eget est laoreet egestas. Curabitur dignissim vestibulum venenatis. Ut non feugiat nisi. In quis turpis aliquet, accumsan dolor sit amet, finibus tellus. Aliquam aliquet semper nibh eu accumsan.</p>
+            <p class="lead"> While a full guide can be found here - <a href="url">https://docs.docker.com/desktop/windows/install/</a> , here's a couple of steps to intall it on your own.
+            <br> 1. The First step is to download Docker for your operating system of choice
+            <br> 2. Once thats done, Start up the app
+            <br> 3. Continue with the quick start guide 
+            <br> 4. Finally create an account and you're all good to go </p>
             
         </div>
     </div>
     <div class="row">
         <div class="col">
             <h1 id="commands">Commands</h1>
-            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ornare ultrices risus et commodo. Curabitur consequat, urna in accumsan semper, elit lacus vulputate nulla, vitae suscipit orci sapien vitae nisi. Praesent mollis velit vitae diam laoreet molestie. Maecenas varius ligula sit amet congue accumsan. In efficitur metus erat, interdum vehicula sem tristique non. Pellentesque eleifend malesuada maximus. Suspendisse eu quam augue. Mauris in mauris dui. Praesent dignissim pharetra est. Donec fringilla ante nec convallis mollis. Donec feugiat elementum pharetra. Sed non faucibus purus. Integer pellentesque neque eget ligula efficitur, tempor aliquam lectus dignissim.
-
-                Cras eros enim, scelerisque sed dolor vitae, viverra consequat ipsum. Pellentesque diam felis, commodo eget lacus ut, imperdiet blandit ligula. Phasellus libero eros, bibendum sit amet cursus at, placerat sed risus. Donec sollicitudin ut quam ut luctus. Sed fermentum arcu vitae leo aliquet congue. Aenean ac est at tortor semper dictum. Proin aliquam arcu non mauris accumsan, vel porta lorem pharetra. Aenean in nunc eget est laoreet egestas. Curabitur dignissim vestibulum venenatis. Ut non feugiat nisi. In quis turpis aliquet, accumsan dolor sit amet, finibus tellus. Aliquam aliquet semper nibh eu accumsan.<br><br><br><br><br><br></p>
+            <p class="lead"> docker stop CONTAINERNAME = stops the webserver
+                             <br> docker rm CONTAINERNAME = removes the container
+                             <br> docker prune = releases the resources that were used for container groups (solves the issue with reaching the quota of container groups)
+                             <br> docker build -t CONTAINER-NAME . = creates a container with the name CONTAINER-NAME
+                             <br> docker run -dp x:x CONTAINER-NAME = runs the container name CONTAINER-NAME on the port x (ie 80:80 runs on port 80)
+                             <br> docker ps = displays information about the containers running such as their ID
+                             <br> docker push docker/CONTAINER-NAME = pushes the container with the tag CONTAINER-NAME to your docker repository
+                             <br> docker login -u YOUR-USER-NAME = logs in to the docke account that you put in “YOUR-USER-NAME”
+                             <br> docker tag CONTAINER-NAME YOUR-USER-NAME/CONTAINER-NAME = gives your container the tag CONTAINER-NAME so that it can be seen and called. </p>
             
         </div>
     </div>
