@@ -36,7 +36,20 @@
 <!-- Page content-->
 <div class="container">
     <div class="mt-5">
-        <h1>Build a Docker image</h1>
+        <h1>Build a Docker image and push it to Docker Hub</h1>
+        <br>
+        <h3>Build the image</h3>
+        <p>A Docker image contains everything needed to run a containerized application, including code, config files, environment variables, libraries and runtimes. When the image is deployed to a Docker environment, it can be executed as a Docker container. In our case, we need to package our website up into an image that Azure can then download and use to create an instance of our container.<br><br>
+
+            <code>docker build -t username/azurewebsite .</code><br><br>
+
+            To be able to upload the image to Docker Hub, we must name it correctly - the naming convention is [username]/[repo name]:[optional tag] so make sure you fill in your Docker Hub username when running the build command. We can omit the optional tag for the image, Docker will just assign the default tag of “latest”. Once the image is built, we can upload it to Docker Hub with the following command:<br><br>
+
+            <code>docker push username/azurewebsite</code><br><br>
+
+            With the image pushed, we are now ready to deploy our website to Azure!
+        </p></br>
+        <a href="/tutorial/6/">Continue to Part 6: Build a Docker Image</a><br>
     </div>
 </div>
 <!-- Bootstrap core JS-->
