@@ -39,40 +39,43 @@
         <h1>Deploy your image to Azure</h1>
         <br>
         <h3>Log into Azure</h3>
-        <p>Run the following command to log into Azure through Docker:<br><br>
-
-            <code>docker login azure</code><br><br>
-            
-            If you run into any issues, refer to this section of <a href="https://docs.docker.com/cloud/aci-integration/#log-into-azure">Docker documentation</a>
-        </p><br>
+        <p>Run the following command to log into Azure through Docker:</p>
+        <p><kbd>docker login azure</kbd></p>
+        <p>If you run into any issues, refer to this section of
+            <a href="https://docs.docker.com/cloud/aci-integration/#log-into-azure">Docker documentation</a></p>
+        <br>
         <h3>Create an ACI context</h3>
-        <p>
-            After logging in, we must create a Docker context associated with ACI (Azure Container Instances) to deploy containers in ACI. Creating an ACI context requires an Azure subscription, a resource group, and a region. Let’s create a new context called ‘azureContext’:<br><br>
+        <p>After logging in, we must create a Docker context associated with ACI (Azure Container Instances) to deploy
+            containers in ACI. Creating an ACI context requires an Azure subscription, a resource group, and a region.
+            Let’s create a new context called ‘azureContext’:</p>
+        <p><kbd>docker context create aci azureContext</kbd></p>
 
-            <code>docker context create aci azureContext</code><br><br>
-
-This command automatically uses your Azure login credentials to identify your subscription IDs and resource groups. You can then interactively select the subscription and group that you would like to use. If you don’t have any existing resource groups in your Azure account, one will be automatically created for you.
-
-        </p><br>
+        <p>This command automatically uses your Azure login credentials to identify your subscription IDs and resource
+            groups. You can then interactively select the subscription and group that you would like to use. If you
+            don’t have any existing resource groups in your Azure account, one will be automatically created for you.</p>
+        <br>
         <h3>Run a container</h3>
-        <p>Now that you’ve logged in and created an ACI context, you can start using Docker commands to deploy containers on ACI.
-            There are two ways to use your new ACI context. You can use the --context flag with the Docker command to specify that you would like to run the command using your newly created ACI context:<br><br>
-            <code>docker --context myacicontext run -dp 80:80 username/azurewebsite</code><br><br>
-            
-            Or, you can change context using docker context use to select the ACI context to be your focus for running Docker commands. For example, we can use the docker context use command to deploy an Nginx container:<br><br>
-
-            <code>docker context use myacicontext<br>
-            docker run -dp 80:80 username/azurewebsite</code><br><br>
-
-            After you’ve switched to the myacicontext context, you can use docker ps to list your containers running on ACI. The result of the ps command will display in column “PORTS” the IP address and port on which the container is running. For example, it may show 52.154.202.35:80->80/tcp, and you can view the Nginx welcome page by browsing http://52.154.202.35.
-            To stop and remove a container from ACI, run:<br><br>
-
-            <code>docker stop &lt;CONTAINER_ID&gt;
-            docker rm &lt;CONTAINER_ID&gt;</code><br><br>
-            
-            And that’s it! You now know how to make a basic website, host it in a Docker container, and deploy it to an Azure Container Instance!
-            
-        </p></br><br>
+        <p>Now that you’ve logged in and created an ACI context, you can start using Docker commands to deploy
+            containers on ACI. There are two ways to use your new ACI context. You can use the --context flag with the
+            Docker command to specify that you would like to run the command using your newly created ACI context:</p>
+        <p><kbd>docker --context myacicontext run -dp 80:80 username/azurewebsite</kbd></p>
+        <p>Or, you can change context using docker context use to select the ACI context to be your focus for
+        running Docker commands. For example, we can use the docker context use command to deploy an Nginx container:</p>
+        <p>
+            <kbd>docker context use myacicontext</kbd><br>
+            <kbd>docker run -dp 80:80 username/azurewebsite</kbd>
+        </p>
+        <p>After you’ve switched to the myacicontext context, you can use docker ps to list your containers running on
+            ACI. The result of the ps command will display in column “PORTS” the IP address and port on which the
+            container is running. For example, it may show 52.154.202.35:80->80/tcp, and you can view the Nginx welcome
+            page by browsing http://52.154.202.35. To stop and remove a container from ACI, run:</p>
+        <p>
+            <kbd>docker stop &lt;CONTAINER_ID&gt;</kbd><br>
+            <kbd>docker rm &lt;CONTAINER_ID&gt;</kbd>
+        </p>
+        <p>And that’s it! You now know how to make a basic website, host it in a Docker container, and deploy it to an
+            Azure Container Instance!</p>
+        <br><br>
     </div>
 </div>
 <!-- Bootstrap core JS-->
