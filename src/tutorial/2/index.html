@@ -36,7 +36,35 @@
 <!-- Page content-->
 <div class="container">
     <div class="mt-5">
-        <h1>Make a basic webpage</h1>
+        <h1>Make a Basic Webpage</h1>
+        <br>
+        <p>The most basic webpage simply consists of an ‘index.html’ file containing some HTML code. Let’s start off by
+            creating a project directory that will contain our code as well as any config files. Let's also make a
+            ‘public_html’ folder to contain our ‘index.html’ file as that is where we will tell Apache/Docker to look
+            for it.</p>
+        <p>There are plenty of tutorials online that cover everything from basic to advanced HTML. For now, a basic
+            “Hello world!” placeholder page will do.</p>
+        <code class="text-black">index.html</code>
+<code>
+<div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #557799">&lt;!DOCTYPE html&gt;</span>
+<span style="color: #007700">&lt;html&gt;</span>
+    <span style="color: #007700">&lt;head&gt;</span>
+        <span style="color: #007700">&lt;title&gt;</span>Example<span style="color: #007700">&lt;/title&gt;</span>
+    <span style="color: #007700">&lt;/head&gt;</span>
+    <span style="color: #007700">&lt;body&gt;</span>
+        <span style="color: #007700">&lt;p&gt;</span>Hello world!<span style="color: #007700">&lt;/p&gt;</span>
+    <span style="color: #007700">&lt;/body&gt;</span>
+<span style="color: #007700">&lt;/html&gt;</span></pre></div>
+</code>
+        <br>
+        <p>While we can make this file using a graphical text editor, it is useful to know how to use a command-line
+            text editor as it is common to work with GUI-less Linux servers in the development/IT world and in such
+            cases, tools like Vi, Vim, or Nano are the only option. As Vi is universally the most common built-in
+            command-line text editor, we have dedicated a page to using it in the ‘Tools’ section.
+            <a href="/tools/vi/">Learn more about Vi</a></p>
+        <p>Once you are comfortable with using Vi, continue to the next section.</p>
+        </br>
+        <a href="/tutorial/3/">Continue to Part 3: Create a Docker Container</a>
     </div>
 </div>
 <!-- Bootstrap core JS-->
