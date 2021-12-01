@@ -1,8 +1,8 @@
 # AzureDemo
 
-A simple tutorial website describing how to host an Apache webserver in a Docker container.
+Tutorial website updated with articles about OOP principles and unit testing in the context of Python. For IS218 Project 2.
 
 Tools used: Bootstrap, Apache, Docker, ACI (Azure Container Instances)
 
-Docker Hub: [tmazyrko/azure-demo](https://hub.docker.com/r/tmazyrko/azure-demo) <br>
-Live site: [acidemo.eastus2.azurecontainer.io](http://acidemo.eastus2.azurecontainer.io)
+Docker Hub: [tmazyrko/is218-project2](https://hub.docker.com/repository/docker/tmazyrko/is218-project2) <br>
+Live site: [tmazyrkois218.eastus2.azurecontainer.io](tmazyrkois218.eastus2.azurecontainer.io)
