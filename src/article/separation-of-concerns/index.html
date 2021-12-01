@@ -46,16 +46,62 @@
 <!-- Page content-->
 <div class="container">
     <div class="mt-5">
-        <h1>Title</h1>
+        <h1>Seperation of Concerns</h1>
+        <p>Separation of concerns is a programming design principle that can be considered the root of the Single
+            Responsibility and Interface Segregation principles of SOLID programming. The general idea of separation of
+            concerns boils down to this: a program should be broken up into chunks that are each able to complete a
+            simple, distinct task as part of a greater system. When it comes to writing functions, separation of
+            concerns instructs us to not write long, complex functions and if possible, parts of a bloated function
+            should be exported and encapsulated in separate smaller private functions.</p>
+        <p>Our Calculator project does not have any overly complicated algorithms, but one place we can find a basic
+            example of separation of concerns is within the Operation base class where we have a separate function for
+            converting all of the input values to floats:</p>
+<div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Operation</span>:  <span style="color: #888888"># pylint: disable=too-few-public-methods</span>
+    <span style="color: #DD4422">&quot;&quot;&quot; Operation abstract base class &quot;&quot;&quot;</span>
+
+    <span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">__init__</span>(<span style="color: #007020">self</span>, values: <span style="color: #007020">tuple</span>):
+        <span style="color: #DD4422">&quot;&quot;&quot; Default constructor &quot;&quot;&quot;</span>
+        <span style="color: #007020">self</span><span style="color: #333333">.</span>values <span style="color: #333333">=</span> Operation<span style="color: #333333">.</span>convert_args_to_tuple_of_float(values)
+
+    <span style="color: #555555; font-weight: bold">@classmethod</span>
+    <span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">create</span>(cls, values: <span style="color: #007020">tuple</span>):
+        <span style="color: #DD4422">&quot;&quot;&quot; Factory method &quot;&quot;&quot;</span>
+        <span style="color: #008800; font-weight: bold">return</span> cls(values)
+
+    <span style="color: #555555; font-weight: bold">@staticmethod</span>
+    <span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">convert_args_to_tuple_of_float</span>(values):
+        <span style="color: #DD4422">&quot;&quot;&quot; Standardizes values to a list of floats &quot;&quot;&quot;</span>
+        list_values_float <span style="color: #333333">=</span> []
+        <span style="color: #008800; font-weight: bold">for</span> item <span style="color: #000000; font-weight: bold">in</span> values:
+            list_values_float<span style="color: #333333">.</span>append(<span style="color: #007020">float</span>(item))
+        <span style="color: #008800; font-weight: bold">return</span> <span style="color: #007020">tuple</span>(list_values_float)
+</pre></div>
+        <p class="fst-italic">operation.py</p>
+        <p>Taking a look at the Calculations history class, we also have numerous functions all of which have only one
+            purpose and therefore follow the separation of concerns principle:</p>
+<div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #555555; font-weight: bold">@staticmethod</span>
+<span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">clear_history</span>():
+    <span style="color: #DD4422">&quot;&quot;&quot;Clears calculation history&quot;&quot;&quot;</span>
+    Calculations<span style="color: #333333">.</span>history<span style="color: #333333">.</span>clear()
+    <span style="color: #008800; font-weight: bold">return</span> <span style="color: #007020">True</span>
+
+<span style="color: #555555; font-weight: bold">@staticmethod</span>
+<span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">count_history</span>():
+    <span style="color: #DD4422">&quot;&quot;&quot;Gets number of calculations in history&quot;&quot;&quot;</span>
+    <span style="color: #008800; font-weight: bold">return</span> <span style="color: #007020">len</span>(Calculations<span style="color: #333333">.</span>history)
+
+<span style="color: #555555; font-weight: bold">@staticmethod</span>
+<span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">get_last_calculation_object</span>():
+    <span style="color: #DD4422">&quot;&quot;&quot;Gets most recent calculation in history&quot;&quot;&quot;</span>
+    <span style="color: #008800; font-weight: bold">return</span> Calculations<span style="color: #333333">.</span>history[<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>]
+
+<span style="color: #555555; font-weight: bold">@staticmethod</span>
+<span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">get_last_calculation_result</span>():
+    <span style="color: #DD4422">&quot;&quot;&quot;Gets value of the result of most recent calculation in history&quot;&quot;&quot;</span>
+    <span style="color: #008800; font-weight: bold">return</span> Calculations<span style="color: #333333">.</span>get_last_calculation_object()<span style="color: #333333">.</span>get_result()
+</pre></div>
+        <p class="fst-italic">calculations.py</p
         <br>
-        <h3>Section Header</h3>
-        <p>Text.</p>
-        <p>Text.</p>
-        <p>Text.</p>
-        <br>
-        <h3>Section Header</h3>
-        <p>Text.</p>
-        <p>Text.</p>
         <br>
         <a href="">GitHub Project for Reference</a>
         <br><br>
